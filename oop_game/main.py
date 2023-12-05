@@ -13,3 +13,9 @@
 # GameObject
 # Room
 # Game
+
+class GameObject:
+    name = ""
+    appearance = ""
+    feel = ""
+    smell = ""
