@@ -14,14 +14,25 @@
 # Room
 # Game
 
+# Declared GameObject class
 class GameObject:
     name = ""
     appearance = ""
     feel = ""
     smell = ""
 
-def __init__(self, name, appearance, feel, smell):
-    self.name = name
-    self.appearance = appearance
-    self.feel = feel
-    self.smell = smell
+# Initialized that sets up the fields of a class
+    def __init__(self, name, appearance, feel, smell):
+        self.name = name
+        self.appearance = appearance
+        self.feel = feel
+        self.smell = smell
+        
+    def look(self):
+        return ""
+      
+    def touch(self):
+        return ""
+      
+    def sniff(self):
+        return ""
