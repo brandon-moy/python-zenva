@@ -48,9 +48,13 @@ class Room:
         self.escape_code = escape_code
         self.game_objects = game_objects
         
+# Checks if code input is equal to the correct code
     def check_code(self, code):
-        return True
+        return self.escape_code == code
       
+# Gets the names from list of game_objects from self and returns them
     def get_game_object_names(self):
-        return []
-  
+        names = []
+        for object in self.game_objects:
+            names.append(object.name)
+        return names
