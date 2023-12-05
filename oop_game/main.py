@@ -29,10 +29,10 @@ class GameObject:
         self.smell = smell
         
     def look(self):
-        return ""
+        return f"You look at the {self.name}. {self.appearance}\n"
       
     def touch(self):
-        return ""
+        return f"You touch the {self.name}. {self.feel}\n"
       
     def sniff(self):
-        return ""
+        return f"You sniff the {self.name}. {self.smell}\n"
