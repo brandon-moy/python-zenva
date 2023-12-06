@@ -97,7 +97,22 @@ class Game:
     def take_turn(self):
         prompt = self.get_room_prompt()
         selection = int(input(prompt))
-        self.select_object(selection - 1)
+        if (selection >= 1 and selection <= 5):
+            self.select_object(selection - 1)
+            self.take_turn()
+        elif (selection >= 100 and selection < 1000):
+            is_code_correct = self.guess_code(selection)
+            if (is_code_correct):
+                print("Congratulations! You have made it out of the room!")
+            else:
+                if (self.attempts == 3):
+                    print("Game over, you ran out of guesses.")
+                else:
+                    print(f"Sorry, that is not the correct code. You have {3 - self.attempts} attempts remaining.")
+                    self.take_turn()
+        else:
+            print("Please input a valid option")
+            self.take_turn()
       
     def get_room_prompt(self):
         prompt = "Enter the 3 digit lock code or choose an item to interact with:\n"
@@ -125,6 +140,13 @@ class Game:
             return object.touch()
         else:
             return object.sniff()
+          
+    def guess_code(self, code):
+        if (self.room.check_code(code)):
+            return True
+        else:
+          self.attempts += 1
+          return False
       
 game = Game()
 game.take_turn()
