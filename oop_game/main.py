@@ -103,15 +103,15 @@ class Game:
         elif (selection >= 100 and selection < 1000):
             is_code_correct = self.guess_code(selection)
             if (is_code_correct):
-                print("Congratulations! You have made it out of the room!")
+                print("Congratulations! You have made it out of the room!\n")
             else:
                 if (self.attempts == 3):
-                    print("Game over, you ran out of guesses.")
+                    print("Game over, you ran out of guesses.\n")
                 else:
-                    print(f"Sorry, that is not the correct code. You have {3 - self.attempts} attempts remaining.")
+                    print(f"Sorry, that is not the correct code. You have {3 - self.attempts} attempts remaining.\n")
                     self.take_turn()
         else:
-            print("Please input a valid option")
+            print("Please input a valid option.\n")
             self.take_turn()
       
     def get_room_prompt(self):
