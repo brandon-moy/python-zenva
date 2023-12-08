@@ -18,7 +18,7 @@ messages = []
 messages.append(message)
 
 # Make an API call
-response = openai.create(model="gpt-3.5-turbo", messages=messages)
+chat_completion = client.chat.completions.create(messages=messages, model="gpt-3.5-turbo")
 
 # Print the response
-print(response)
+print(chat_completion)
