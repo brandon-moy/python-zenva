@@ -12,9 +12,11 @@ api_key = os.getenv("CHATGPT_API_KEY")
 openai.api_key = api_key
 
 # Define prompt
+message = { "role": "user", "content": "why is the sky blue?"}
 
+messages = []
+messages.append(message)
 
 # Make an API call
-
 
 # Print the response
